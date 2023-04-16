@@ -8,6 +8,7 @@ body {
 
 button {
 	cursor: pointer;
+	padding: 0.5rem 1rem;
 }
 
 main {
@@ -15,11 +16,17 @@ main {
 	flex-direction: column;
 	align-items: center;
 	gap: 1.5rem;
+	padding-inline: 2rem;
 }
 
-#cacheStatus {
+.controls {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+}
+
+.cache-status-container {
 	position: absolute;
 	right: 2rem;
 	bottom: 2rem;
-	font-size: 1.5rem;
 }
