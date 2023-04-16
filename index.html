@@ -7,7 +7,20 @@
 		<title>Vite + TS</title>
 	</head>
 	<body>
-		<div id="app"></div>
+		<main>
+			<h1>Results are logged to the console</h1>
+			<div class="controls">
+				<button id="task-1">Log Task 1</button>
+				<button id="task-2">Log Task 2</button>
+				<button id="task-3">Log Task 3</button>
+				<button id="task-4">Log Task 4</button>
+			</div>
+			<span id="loading"></span>
+		</main>
+		<div class="cache-status-container">
+			<p id="cache-status">API data is not cached</p>
+			<button id="refetch">Refetch Data</button>
+		</div>
 		<script type="module" src="/src/main.ts"></script>
 	</body>
 </html>
