@@ -44,21 +44,44 @@ async function fetchDataAndSetFlag() {
 	}
 }
 
-function getErrorMessage(error: unknown) {
-	if (error instanceof Error) return error.message;
-	return String(error);
-}
+type Tasks = 'task1' | 'task2' | 'task3' | 'task4';
 
-async function getData<T>(url: string) {
-	try {
-		const response = await fetch(url);
-		if (!response.ok) {
-			throw new Error(`${response.status}: ${response.statusText}`);
+async function taskManager(task: Tasks) {
+	if (!dataFetched) {
+		await fetchDataAndSetFlag();
+	}
+
+	switch (task) {
+		case 'task1':
+			console.log('---------- task 1 ----------');
+			console.log(users);
+			console.log(products);
+			console.log(carts);
+			console.log('------------------------------');
+			break;
+
+		case 'task2': {
+			const categories = getCategoriesPrices(products);
+			console.log('---------- task 2 ----------');
+			console.log(categories);
+			console.log('------------------------------');
+			break;
 		}
-		const data = (await response.json()) as T;
-		return data;
-	} catch (err) {
-		throw new Error(getErrorMessage(err));
+		case 'task3': {
+			console.log('---------- task 3 ----------');
+			console.log(getMostValuableCart(carts, products, users));
+			console.log('------------------------------');
+			break;
+		}
+		case 'task4': {
+			console.log('---------- task 4 ----------');
+			console.log(getFurthestUsers(users));
+			console.log('------------------------------');
+			break;
+		}
+
+		default:
+			break;
 	}
 }
 
