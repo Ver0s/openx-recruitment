@@ -26,10 +26,10 @@ function getDistance(user1: User, user2: User) {
 	return R * c;
 }
 
-// At first I though that it's possible to pull this solution off in linear time
-// but I think it's not since we have to compare each user with every other user.
-// Therefore this function runs in O(n^2).
-// I just wanted to point it out here that I'm aware of this runtime cost.
+// At first I thought that it's possible to pull this solution off in linear time
+// but I don't think it is because there is no inherent ordering or relationship
+// between the users. Therefore this function runs in O(n^2).
+// I just wanted to point it out here to show that I'm aware of this time complexity.
 export default function getFurthestUsers(users: User[]) {
 	if (users.length < 2) return null;
 
