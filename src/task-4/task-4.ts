@@ -1,5 +1,8 @@
 import type { User } from '../api-types';
 
+// This function could be made to be more generic as in it could take two pairs
+// of lat and long coords instead of whole two user objects. But this implementation works
+// well in the context of task given.
 function getDistance(user1: User, user2: User) {
 	const lat1 = parseFloat(user1.address.geolocation.lat);
 	const lon1 = parseFloat(user1.address.geolocation.long);
