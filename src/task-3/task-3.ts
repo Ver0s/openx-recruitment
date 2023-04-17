@@ -49,7 +49,7 @@ export default function getMostValuableCart(
 		}
 	}
 
-	const owner = getUsernameById(mostValueableCart.id, users);
+	const owner = getUsernameById(mostValueableCart.userId, users);
 
 	return { cart: mostValueableCart, value: maxCartValue, owner };
 }
