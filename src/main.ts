@@ -16,6 +16,8 @@ let dataFetched = false;
 // every button click.
 function reportCacheStatus() {
 	const cacheStatus = document.querySelector<HTMLDivElement>('#cache-status');
+	if (cacheStatus === null) return;
+
 	if (!dataFetched) {
 		cacheStatus.textContent = 'API data is not cached';
 	} else {
