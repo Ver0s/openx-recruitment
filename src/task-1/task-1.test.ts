@@ -17,7 +17,7 @@ describe('fetchData function', () => {
 		vi.resetAllMocks();
 	});
 
-	test('returns the data on successful API response', async () => {
+	test('should returns the data on successful API response', async () => {
 		const data = await fetchData<typeof mockData>(mockUrl);
 		expect(data).toEqual(mockData);
 		expect(global.fetch).toHaveBeenCalledTimes(1);
@@ -25,7 +25,7 @@ describe('fetchData function', () => {
 		expect(mockResponse.json).toHaveBeenCalledTimes(1);
 	});
 
-	test('throws an error on unsuccessful API response', async () => {
+	test('should throw an error on unsuccessful API response', async () => {
 		const mockError = new Error('404: Not Found');
 		global.fetch.mockImplementationOnce(async () => {
 			return await Promise.resolve({
@@ -38,7 +38,7 @@ describe('fetchData function', () => {
 		await expect(fetchData(mockUrl)).rejects.toThrow(mockError);
 	});
 
-	test('throws an error on network error', async () => {
+	test('should throw an error on network error', async () => {
 		const mockError = new Error('Network Error');
 		global.fetch.mockImplementationOnce(
 			async () => await Promise.reject(mockError)

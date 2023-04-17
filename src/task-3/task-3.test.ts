@@ -567,7 +567,7 @@ describe('getMostValuableCart', () => {
 		};
 		expect(result).toEqual(expectedResult);
 	});
-	test('should an object with initial values given an empty array of carts', () => {
+	test('should return an object with initial empty values given an empty array of carts', () => {
 		const carts: Cart[] = [];
 		const products: Product[] = [];
 		const users: User[] = [];
