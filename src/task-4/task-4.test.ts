@@ -14,7 +14,11 @@ describe('getFurthestUsers', () => {
 					geolocation: { lat: '10.3456', long: '20.6419' },
 				},
 			},
-			{ address: { geolocation: { lat: '50.3467', long: '-20.1310' } } },
+			{
+				address: {
+					geolocation: { lat: '50.3467', long: '-20.1310' },
+				},
+			},
 		];
 		const furthestUsers = getFurthestUsers(users);
 		expect(furthestUsers[0]).toEqual(users[0]);
