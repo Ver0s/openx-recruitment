@@ -1,4 +1,4 @@
-# OpenX recruitment task
+# OpenX recruitment task 2 (fakestore API)
 
 **[Click here for live preview](https://ver0s.github.io/openx-recruitment/)**
 Alternatively you can download the code, type `npm install` and run it locally.
